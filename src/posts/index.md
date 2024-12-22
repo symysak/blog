@@ -14,9 +14,9 @@ date: 2024/12/23
 ブログ一覧
 
 <ul>
-    <li v-for="(entry, index) in posts" :key="index">
-        <a :href="entry.url">
-            {{ entry.frontmatter.emoji }} {{ entry.frontmatter.title }} - {{ entry.frontmatter.date }}
+    <li v-for="(post, index) in posts" :key="index">
+        <a :href="post.url.replace(/^\/posts\/[0-9]+\/[0-9]+\//g, '/posts/')">
+            {{ post.frontmatter.emoji }} {{ post.frontmatter.title }} - {{ post.frontmatter.date }}
         </a>
     </li>
 </ul>
