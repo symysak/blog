@@ -2,6 +2,7 @@ import { defineConfig } from 'vitepress'
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
+  lang: 'ja-JP',
   title: "Yama's Blog",
   description: "Yama's Technology Blog",
   srcDir: "src",
