@@ -30,6 +30,7 @@ zip -r etherip-files etherip/
 https://docs.vyos.io/en/latest/contributing/build-vyos.html
 ### etheripのインストールと設定
 __ここからVyOS側で作業する!!__
+
 先ほどのetherip-files.zipをscpなどでVyOS側に移した後、下記コマンドを実行してください。
 ```
 unzip etherip-files.zip

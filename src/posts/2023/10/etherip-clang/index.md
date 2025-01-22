@@ -7,14 +7,18 @@ date: 2023/10/21
 
 ## はじめに
 https://github.com/symysak/etherip
+
 EtherIPのLinux実装を作ってみました。IX3110とIX2207と通信できることを確認済みです。
 
 ## きっかけ
-UNIVERGE IXシリーズとEtherIPトンネルを張りたい！ただそれだけです。
-EtherIPは一部のネットワーク界隈でよく使用されているようですが、Linuxで動かせないので作ってみました。
+UNIVERGE IXシリーズとEtherIPトンネルを張りたい！ただそれだけです。EtherIPは一部のネットワーク界隈でよく使用されているようですが、Linuxで動かせないので作ってみました。
+
 Linuxで動かせないと書きましたが、一応有志によるカーネルモジュールや実装はあるようです。
+
 https://github.com/kjmkznr/etherip
+
 https://zenn.dev/kuredev/articles/5c2bc814acada0
+
 ただ、前者は古いせいか自分の環境で動かせず、後者はコードが非公開になっていたので、自分で書いてみました。
 
 ## 動作確認済み環境
@@ -60,6 +64,7 @@ sudo ip tuntap del dev <tapデバイス名>
 ## 開発で躓いた点
 ### IPv4/IPv6アドレスを格納しておく構造体
 最初は`sockaddr_in`や`sockaddr_in6`に格納したテータを`sockaddr`にキャストして持っていましたが、これだと良くないようです。
+
 https://samba-technical.samba.narkive.com/ittSBPhp/arguments-to-sockaddr-equal-sockaddr-vs-sockaddr-storage
 
 実際に、触っていない変数の値が勝手に変わってしまうなどの問題が起きてしまいました。
