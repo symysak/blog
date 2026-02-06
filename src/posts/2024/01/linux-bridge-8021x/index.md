@@ -3,6 +3,7 @@ title: Linux Bridgeで802.1xの通信を透過する
 emoji: 🐧
 date: 2024/01/15
 ---
+# Linux Bridgeで802.1xの通信を透過する
 
 IEEE802.1xで使用されるEAPOLをLinux Bridgeで透過する方法
 ## 結論

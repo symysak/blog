@@ -3,7 +3,7 @@ title: VyOS1.4でEtherIPを使う
 emoji: 🐧
 date: 2023/11/19
 ---
-
+# VyOS1.4でEtherIPを使う
 
 EtherIP(IPv4/IPv6)をVyOSで使う方法を紹介します。
 ## 環境

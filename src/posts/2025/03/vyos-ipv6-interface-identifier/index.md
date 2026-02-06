@@ -3,6 +3,7 @@ title: VyOSにIPv6 Interface Identifierの設定を実装する
 emoji: 🐧
 date: 2025/03/15
 ---
+# VyOSにIPv6 Interface Identifierの設定を実装する
 
 ## 下調べ
 Interface Identifierは`ip token set ::ca:fe:00:02/64 dev eth0`で設定できる
