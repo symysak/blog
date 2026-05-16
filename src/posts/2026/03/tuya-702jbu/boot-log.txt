@@ -1,0 +1,849 @@
+
+U-Boot SPL 2013.07 (Mar 19 2020 - 11:55:08)
+Timer init
+CLK stop
+PLL init
+pll_init:399
+pll_cfg.pdiv = 10, pll_cfg.h2div = 5, pll_cfg.h0div = 5, pll_cfg.cdiv = 1, pll_cfg.l2div = 2
+fbdiv = 36 , refdiv = 1 , fdivq = 2 ,pllod = 1 range = 3
+cppcr is 02300860
+CPM_CPAPCR 0470484d
+fbdiv = 38 , refdiv = 1 , fdivq = 2 ,pllod = 1 range = 3
+cppcr is 02500860
+CPM_CPMPCR 04a0484d
+fbdiv = 50 , refdiv = 1 , fdivq = 2 ,pllod = 1 range = 3
+cppcr is 03100860
+CPM_CPVPCR 0310086d
+cppcr 0x9a773310
+apll_freq 864000000 
+mpll_freq 900000000 
+vpll_freq = 1200000000 
+ddr sel mpll, cpu sel apll
+ddrfreq 450000000
+cclk  864000000
+l2clk 432000000
+h0clk 180000000
+h2clk 180000000
+pclk  90000000
+CLK init
+SDRAM init
+sdram init start
+ddr_inno_phy_init ..!
+phy reg = 0x00000007, CL = 0x00000007
+ddr_inno_phy_init ..! 11:  00000004
+ddr_inno_phy_init ..! 22:  00000006
+ddr_inno_phy_init ..! 33:  00000006
+REG_DDR_LMR: 00000210
+REG_DDR_LMR: 00000310
+REG_DDR_LMR: 00000110
+REG_DDR_LMR, MR0: 00d73011
+T30_0x5: 00000007
+T30_0x15: 0000000c
+T30_0x4: 00000000
+T30_0x14: 00000002
+INNO_TRAINING_CTRL 1: 00000000
+INNO_TRAINING_CTRL 2: 000000a1
+T30_cc: 00000003
+INNO_TRAINING_CTRL 3: 000000a0
+T30_118: 0000003c
+T30_158: 0000003c
+T30_190: 0000001e
+T30_194: 00000019
+jz-04 :  0x00000051 
+jz-08 :  0x000000a0 
+jz-28 :  0x00000024 
+DDR PHY init OK
+INNO_DQ_WIDTH   :00000003
+INNO_PLL_FBDIV  :00000014
+INNO_PLL_PDIV   :00000005
+INNO_MEM_CFG    :00000051
+INNO_PLL_CTRL   :00000018
+INNO_CHANNEL_EN :0000000d
+INNO_CWL        :00000006
+INNO_CL         :00000007
+DDR Controller init
+DDRC_STATUS         0x80000001
+DDRC_CFG            0x0a688a40
+DDRC_CTRL           0x0000891c
+DDRC_LMR            0x00400008
+DDRC_DLP            0x00000000
+DDRC_TIMING1        0x040e0706
+DDRC_TIMING2        0x02150607
+DDRC_TIMING3        0x2006051b
+DDRC_TIMING4        0x17240031
+DDRC_TIMING5        0xff060405
+DDRC_TIMING6        0x32150505
+DDRC_REFCNT         0x00da5c01
+DDRC_MMAP0          0x000020fc
+DDRC_MMAP1          0x00002400
+DDRC_REMAP1         0x03020100
+DDRC_REMAP2         0x07060504
+DDRC_REMAP3         0x0b0a0908
+DDRC_REMAP4         0x0f0e0d0c
+DDRC_REMAP5         0x13121110
+DDRC_AUTOSR_EN      0x00000000
+sdram init finished
+SDRAM init ok
+board_init_r
+image entry point: 0x80100000
+
+
+U-Boot 2013.07 (Mar 19 2020 - 11:55:08)
+
+Board: ISVP (Ingenic XBurst T21 SoC)
+DRAM:  64 MiB
+Top of RAM usable for U-Boot at: 84000000
+Reserving 440k for U-Boot at: 83f90000
+Reserving 32784k for malloc() at: 81f8c000
+Reserving 32 Bytes for Board Info at: 81f8bfe0
+Reserving 124 Bytes for Global Data at: 81f8bf64
+Reserving 128k for boot params() at: 81f6bf64
+Stack Pointer at: 81f6bf48
+Now running in RAM - U-Boot at: 83f90000
+MMC:   msc: 0
+the manufacturer 0b
+SF: Detected XT25F128B
+
+*** Warning - bad CRC, using default environment
+
+In:    serial
+Out:   serial
+Err:   serial
+Net:   cpm_mphyc_rst = 0x01000000 cpm_mphyc = 0x00000000
+Jz4775-9161
+the manufacturer 0b
+SF: Detected XT25F128B
+
+ReadFlashData ret=0 
+**********Load rootfs mtd(2) from flash************ 
+****Enter into Check Update:1 ****** 
+Card did not respond to voltage select!
+** Bad device mmc 0 **
+Card did not respond to voltage select!
+** Bad device mmc 0 **
+### main_loop: bootcmd="sf probe;sf read 0x80600000 0x40000 0x1E0000; bootm 0x80600000"
+Hit any key to stop autoboot:  1  0 
+the manufacturer 0b
+SF: Detected XT25F128B
+
+--->probe spend 4 ms
+SF: 1966080 bytes @ 0x40000 Read: OK
+--->read spend 318 ms
+## Booting kernel from Legacy Image at 80600000 ...
+   Image Name:   Linux-3.10.14__isvp_turkey_1.0__
+   Image Type:   MIPS Linux Kernel Image (lzma compressed)
+   Data Size:    1543780 Bytes = 1.5 MiB
+   Load Address: 80010000
+   Entry Point:  803501e0
+   Verifying Checksum ... OK
+   Uncompressing Kernel Image ... OK
+Get Env Data = console=ttyS1,115200n8 mem=43M@0x0 rmem=21M@0x2B00000 init=/linuxrc rootfstype=squashfs root=/dev/mtdblock3 rw mtdparts=jz_sfc:256k(boot),1920k(kernel),6720k(rootfs),6720k(rootfsBak),384k(sysCfg),320k(sysBak),64k(upgFlag),-(appfs) 
+
+Starting kernel ...
+
+[    0.000000] Initializing cgroup subsys cpu
+[    0.000000] Initializing cgroup subsys cpuacct
+[    0.000000] Linux version 3.10.14__isvp_turkey_1.0__ (YiYanhong@softSVN) (gcc version 4.7.2 (Ingenic r2.3.3 2016.12) ) #15 PREEMPT Mon Nov 18 19:08:29 CST 2019
+[    0.000000] bootconsole [early0] enabled
+[    0.000000] CPU0 RESET ERROR PC:92A5B01D
+[    0.000000] CPU0 revision is: 00d00100 (Ingenic Xburst)
+[    0.000000] FPU revision is: 00b70000
+[    0.000000] CCLK:864MHz L2CLK:432Mhz H0CLK:225MHz H2CLK:225Mhz PCLK:112Mhz
+[    0.000000] Determined physical RAM map:
+[    0.000000]  memory: 00454000 @ 00010000 (usable)
+[    0.000000]  memory: 0002c000 @ 00464000 (usable after init)
+[    0.000000] User-defined physical RAM map:
+[    0.000000]  memory: 02b00000 @ 00000000 (usable)
+[    0.000000] Zone ranges:
+[    0.000000]   Normal   [mem 0x00000000-0x02afffff]
+[    0.000000] Movable zone start for each node
+[    0.000000] Early memory node ranges
+[    0.000000]   node   0: [mem 0x00000000-0x02afffff]
+[    0.000000] Primary instruction cache 16kB, 8-way, VIPT, linesize 32 bytes.
+[    0.000000] Primary data cache 16kB, 8-way, VIPT, no aliases, linesize 32 bytes
+[    0.000000] pls check processor_id[0x00d00100],sc_jz not support!
+[    0.000000] MIPS secondary cache 64kB, 8-way, linesize 32 bytes.
+[    0.000000] Built 1 zonelists in Zone order, mobility grouping off.  Total pages: 10922
+[    0.000000] Kernel command line: console=ttyS1,115200n8 mem=43M@0x0 rmem=21M@0x2B00000 init=/linuxrc rootfstype=squashfs root=/dev/mtdblock3 rw mtdparts=jz_sfc:256k(boot),1920k(kernel),6720k(rootfs),6720k(rootfsBak),384k(sysCfg),320k(sysBak),64k(upgFlag),-(appfs)
+[    0.000000] PID hash table entries: 256 (order: -2, 1024 bytes)
+[    0.000000] Dentry cache hash table entries: 8192 (order: 3, 32768 bytes)
+[    0.000000] Inode-cache hash table entries: 4096 (order: 2, 16384 bytes)
+[    0.000000] Memory: 38368k/44032k available (3363k kernel code, 5664k reserved, 1066k data, 176k init, 0k highmem)
+[    0.000000] SLUB: HWalign=32, Order=0-3, MinObjects=0, CPUs=1, Nodes=1
+[    0.000000] Preemptible hierarchical RCU implementation.
+[    0.000000] NR_IRQS:422
+[    0.000000] clockevents_config_and_register success.
+[    0.000031] Calibrating delay loop... 858.52 BogoMIPS (lpj=4292608)
+[    0.037692] pid_max: default: 32768 minimum: 301
+[    0.042696] Mount-cache hash table entries: 512
+[    0.047940] Initializing cgroup subsys debug
+[    0.052205] Initializing cgroup subsys freezer
+[    0.059876] regulator-dummy: no parameters
+[    0.064186] NET: Registered protocol family 16
+[    0.083320] bio: create slab <bio-0> at 0
+[    0.090316] jz-dma jz-dma: JZ SoC DMA initialized
+[    0.095532] usbcore: registered new interface driver usbfs
+[    0.101087] usbcore: registered new interface driver hub
+[    0.106630] usbcore: registered new device driver usb
+[    0.111909]  (null): set:280  hold:281 dev=112500000 h=562 l=562
+[    0.118154] media: Linux media interface: v0.10
+[    0.122725] Linux video capture interface: v2.00
+[    0.129593] Switching to clocksource jz_clocksource
+[    0.135152] cfg80211: Calling CRDA to update world regulatory domain
+[    0.141897] jz-dwc2 jz-dwc2: cgu clk gate get error
+[    0.146844] jz-dwc2 jz-dwc2: regulator vbus get error
+[    0.151904] DWC IN OTG MODE
+[    0.304572] sft id =========================off
+[    0.309196] dwc2 dwc2: Keep PHY ON
+[    0.312568] dwc2 dwc2: Using Buffer DMA mode
+[    0.515957] dwc2 dwc2: Core Release: 3.00a
+[    0.520074] dwc2 dwc2: DesignWare USB2.0 High-Speed Host Controller
+[    0.526464] dwc2 dwc2: new USB bus registered, assigned bus number 1
+[    0.533838] hub 1-0:1.0: USB hub found
+[    0.537683] hub 1-0:1.0: 1 port detected
+[    0.541756] dwc2 dwc2: DWC2 Host Initialized
+[    0.546352] NET: Registered protocol family 2
+[    0.551415] TCP established hash table entries: 512 (order: 0, 4096 bytes)
+[    0.558406] TCP bind hash table entries: 512 (order: -1, 2048 bytes)
+[    0.564810] TCP: Hash tables configured (established 512 bind 512)
+[    0.571115] TCP: reno registered
+[    0.574322] UDP hash table entries: 256 (order: 0, 4096 bytes)
+[    0.580304] UDP-Lite hash table entries: 256 (order: 0, 4096 bytes)
+[    0.586951] NET: Registered protocol family 1
+[    0.591752] freq_udelay_jiffys[0].max_num = 10
+[    0.596243] cpufreq 	udelay 	loops_per_jiffy	
+[    0.600598] 12000	 59619	 59619	
+[    0.603864] 24000	 119239	 119239	
+[    0.607326] 60000	 298097	 298097	
+[    0.610752] 120000	 596195	 596195	
+[    0.614283] 200000	 993659	 993659	
+[    0.617832] 300000	 1490488	 1490488	
+[    0.621536] dwc2 dwc2: ID PIN CHANGED!
+[    0.625379] init DWC as A_HOST
+[    0.628442] 600000	 2980977	 2980977	
+[    0.632118] 792000	 3934890	 3934890	
+[    0.635985] 1008000	 5008042	 5008042	
+[    0.639711] 1200000	 5961955	 5961955	
+[    0.649834] squashfs: version 4.0 (2009/01/31) Phillip Lougher
+[    0.656030] jffs2: version 2.2. Â 2001-2006 Red Hat, Inc.
+[    0.661994] msgmni has been set to 74
+[    0.668388] io scheduler noop registered
+[    0.672330] io scheduler cfq registered (default)
+[    0.679408] jz-uart.1: ttyS1 at MMIO 0x10031000 (irq = 58) is a uart1
+[    0.687711] console [ttyS1] enabled, bootconsole disabled
+[    0.687711] console [ttyS1] enabled, bootconsole disabled
+[    0.704268] brd: module loaded
+[    0.710467] loop: module loaded
+[    0.714697] zram: Created 2 device(s) ...
+[    0.718973] logger: created 256K log 'log_main'
+[    0.724465] jz SADC driver registeres over!
+[    0.730785] jz TCU driver register completed
+[    0.736083] the id code = b4018, the flash name is GD25LQ128C
+[    0.742029] #####unsupport ID is b4018 if the id not be 0x00,the flash can be ok,but the quad mode may be not support!!!!! 
+[    0.952855] JZ SFC Controller for SFC channel 0 driver register
+[    0.959022] mtd: jz_sfc: skipping zero sized partition
+[    0.964337] 7 cmdlinepart partitions found on MTD device jz_sfc
+[    0.970508] Creating 7 MTD partitions on "jz_sfc":
+[    0.975520] 0x000000000000-0x000000040000 : "boot"
+[    0.981252] 0x000000040000-0x000000220000 : "kernel"
+[    0.987144] 0x000000220000-0x0000008b0000 : "rootfs"
+[    0.992975] 0x0000008b0000-0x000000f40000 : "rootfsBak"
+[    0.999182] 0x000000f40000-0x000000fa0000 : "sysCfg"
+[    1.005133] 0x000000fa0000-0x000000ff0000 : "sysBak"
+[    1.010983] 0x000000ff0000-0x000001000000 : "upgFlag"
+[    1.016992] SPI NOR MTD LOAD OK
+[    1.020331] tun: Universal TUN/TAP device driver, 1.6
+[    1.025672] tun: (C) 1999-2004 Max Krasnyansky <maxk@qualcomm.com>
+[    1.032233] Bus Mode Reg after reset: 0x00020101, cnt=0
+[    1.055918] libphy: jz_mii_bus: probed
+[    1.059902] =======>gmacdev = 0x821e4e00<================
+[    1.065602] =========>gmacdev->MacBase = 0xb34b0000 DmaBase = 0xb34b1000
+[    1.072534] Bus Mode Reg after reset: 0x00020101, cnt=0
+[    1.080167] jz_mac jz_mac.0: JZ on-chip Ethernet MAC driver, Version 1.0
+[    1.087243] usb 1-1: new high-speed USB device number 2 using dwc2
+[    1.093931] usbcore: registered new interface driver zd1201
+[    1.099933] i2c /dev entries driver
+[    1.104323] TCP: cubic registered
+[    1.107827] NET: Registered protocol family 17
+[    1.112948] soc_vpu probe success,version:1.0.0-03203fd46d
+[    1.119121] input: gpio-keys as /devices/platform/gpio-keys/input/input0
+[    1.126605] drivers/rtc/hctosys.c: unable to open rtc device (rtc0)
+[    1.138396] VFS: Mounted root (squashfs filesystem) readonly on device 31:3.
+[    1.146227] Freeing unused kernel memory: 176K (80464000 - 80490000)
+mdev is ok......
+
+   Press q -> ENTER to exit boot procedure? 
+----enter to upgrade from sdcard----
+[    4.260128] jzmmc_v1.2 jzmmc_v1.2.0: vmmc regulator missing
+[    4.304574] jzmmc_v1.2 jzmmc_v1.2.0: register success!
+mount: mounting /dev/mmcblk0p1 on /var/sdcard failed: No such file or directory
+    syscfg.ini not exist.
+mkdir: can't create directory '/var/syscfg': File exists
+mkdir: can't create directory '/var/sysbak': File exists
+    uboot.bin not exist.
+    kernel.bin not exist.
+    rootfs.bin not exist.
+    rootfsBak.bin not exist.
+----leaved to upgrade from sdcard----
+umount: can't umount /var/sdcard: Invalid argument
+rmmod mmcv12 and mmcblock and mmccore
+jzmmc_v12 16828 0 - Live 0xc00dd000
+mmc_core 99776 1 jzmmc_v12, Live 0xc009b000
+
+Ingenic-uc1_1 login: =========================================================================
+  RootFS Version: 
+  MTD Version: 
+=========================================================================
+[    7.842966] 
+[    7.842966]  peripher dev  success
+[    8.076309] jz_codec_register: probe() successful!
+[    8.444978] dma dma0chan24: Channel 24 have been requested.(phy id 7,type 0x06 desc a18cf000)
+[    8.454266] dma dma0chan25: Channel 25 have been requested.(phy id 6,type 0x06 desc a18ce000)
+[    8.463683] dma dma0chan26: Channel 26 have been requested.(phy id 5,type 0x04 desc a18cc000)
+[    9.179421] RTW: module init start
+[    9.182950] RTW: rtl8188fu v5.3.0.1_28034.20180525
+[    9.190973] RTW: build time: Jun 13 2020 13:39:26
+[    9.195999] RTW: rtw_inetaddr_notifier_register
+[    9.200752] RTW: 
+[    9.200752] usb_endpoint_descriptor(0):
+[    9.206791] RTW: bLength=7
+[    9.209590] RTW: bDescriptorType=5
+[    9.213101] RTW: bEndpointAddress=81
+[    9.216857] RTW: wMaxPacketSize=512
+[    9.220463] RTW: bInterval=0
+[    9.223436] RTW: RT_usb_endpoint_is_bulk_in = 1
+[    9.228150] RTW: 
+[    9.228150] usb_endpoint_descriptor(1):
+[    9.234091] RTW: bLength=7
+[    9.236943] RTW: bDescriptorType=5
+[    9.240459] RTW: bEndpointAddress=2
+[    9.244059] RTW: wMaxPacketSize=512
+[    9.247708] RTW: bInterval=0
+[    9.250685] RTW: RT_usb_endpoint_is_bulk_out = 2
+[    9.255481] RTW: 
+[    9.255481] usb_endpoint_descriptor(2):
+[    9.261422] RTW: bLength=7
+[    9.264215] RTW: bDescriptorType=5
+[    9.267746] RTW: bEndpointAddress=3
+[    9.271348] RTW: wMaxPacketSize=512
+[    9.274968] RTW: bInterval=0
+[    9.277942] RTW: RT_usb_endpoint_is_bulk_out = 3
+[    9.282712] RTW: nr_endpoint=3, in_num=1, out_num=2
+[    9.282712] 
+[    9.289297] RTW: USB_SPEED_HIGH
+[    9.292555] RTW: CHIP TYPE: RTL8188FU
+[    9.296675] RTW: rtw_hal_config_rftype RF_Type is 0 TotalTxPath is 1
+[    9.303262] RTW: Chip Version Info: CHIP_8188F_Normal_Chip_SMIC_B_CUT_1T1R_RomVer(0)
+[    9.311327] RTW: _ConfigChipOutEP_8188F OutEpQueueSel(0x05), OutEpNumber(2)
+[    9.318623] RTW: EEPROM type is E-FUSE
+[    9.322690] RTW: Boot from EFUSE, Autoload OK !
+[    9.327621] RTW: hal_EfuseSwitchToBank: Efuse switch bank to 0
+[    9.399237] RTW: hal_ReadEFuse_WiFi: data end at address=0x74
+[    9.405344] RTW: HW EFUSE
+[    9.408061] RTW: 0x000: 29 81 00 FC  0B 00 00 00  00 0C 04 4C  10 07 00 00  
+[    9.415452] RTW: 0x010: 26 26 26 26  26 26 2B 2B  2B 2B 2B 03  FF FF FF FF  
+[    9.422807] RTW: 0x020: FF FF FF FF  FF FF FF FF  FF FF FF FF  FF FF FF FF  
+[    9.430186] RTW: 0x030: FF FF FF FF  FF FF FF FF  FF FF FF FF  FF FF FF FF  
+[    9.437561] RTW: 0x040: FF FF FF FF  FF FF FF FF  FF FF FF FF  FF FF FF FF  
+[    9.444935] RTW: 0x050: FF FF FF FF  FF FF FF FF  FF FF FF FF  FF FF FF FF  
+[    9.452289] RTW: 0x060: FF FF FF FF  FF FF FF FF  FF FF FF FF  FF FF FF FF  
+[    9.459663] RTW: 0x070: FF FF FF FF  FF FF FF FF  FF FF FF FF  FF FF FF FF  
+[    9.467038] RTW: 0x080: FF FF FF FF  FF FF FF FF  FF FF FF FF  FF FF FF FF  
+[    9.474392] RTW: 0x090: FF FF FF FF  FF FF FF FF  FF FF FF FF  FF FF FF FF  
+[    9.481765] RTW: 0x0A0: FF FF FF FF  FF FF FF FF  FF FF FF FF  FF FF FF FF  
+[    9.489141] RTW: 0x0B0: FF FF FF FF  FF FF FF FF  20 28 1A 00  00 00 00 FF  
+[    9.496515] RTW: 0x0C0: FF 12 00 10  00 FF 00 FF  00 00 FF FF  FF FF FF FF  
+[    9.503869] RTW: 0x0D0: DA 0B 79 F1  42 66 40 68  B9 D3 23 E5  67 09 03 52  
+[    9.511243] RTW: 0x0E0: 65 61 6C 74  65 6B 09 03  38 30 32 2E  31 31 6E 00  
+[    9.518617] RTW: 0x0F0: FF FF FF FF  FF FF FF FF  FF FF FF FF  FF FF FF FF  
+[    9.525991] RTW: 0x100: FF FF FF FF  FF FF FF FF  FF FF FF FF  FF FF FF FF  
+[    9.533345] RTW: 0x110: FF FF FF FF  FF FF FF FF  FF FF FF FF  FF FF FF FF  
+[    9.540719] RTW: 0x120: FF FF FF FF  FF FF FF FF  FF FF FF FF  FF FF FF FF  
+[    9.548100] RTW: 0x130: C1 B6 FF FF  FF FF FF FF  FF FF 00 11  FF FF FF FF  
+[    9.555476] RTW: 0x140: FF FF FF FF  FF FF FF FF  FF FF FF FF  FF FF FF FF  
+[    9.562830] RTW: 0x150: FF FF FF FF  FF FF FF FF  FF FF FF FF  FF FF FF FF  
+[    9.570206] RTW: 0x160: FF FF FF FF  FF FF FF FF  FF FF FF FF  FF FF FF FF  
+[    9.577581] RTW: 0x170: FF FF FF FF  FF FF FF FF  FF FF FF FF  FF FF FF FF  
+[    9.585007] RTW: 0x180: FF FF FF FF  FF FF FF FF  FF FF FF FF  FF FF FF FF  
+[    9.592366] RTW: 0x190: FF FF FF FF  FF FF FF FF  FF FF FF FF  FF FF FF FF  
+[    9.599757] RTW: 0x1A0: FF FF FF FF  FF FF FF FF  FF FF FF FF  FF FF FF FF  
+[    9.607135] RTW: 0x1B0: FF FF FF FF  FF FF FF FF  FF FF FF FF  FF FF FF FF  
+[    9.614509] RTW: 0x1C0: FF FF FF FF  FF FF FF FF  FF FF FF FF  FF FF FF FF  
+[    9.621865] RTW: 0x1D0: FF FF FF FF  FF FF FF FF  FF FF FF FF  FF FF FF FF  
+[    9.629246] RTW: 0x1E0: FF FF FF FF  FF FF FF FF  FF FF FF FF  FF FF FF FF  
+[    9.636624] RTW: 0x1F0: FF FF FF FF  FF FF FF FF  FF FF FF FF  FF FF FF FF  
+[    9.643988] RTW: EEPROM VID = 0x bda
+[    9.647704] RTW: EEPROM PID = 0xf179
+[    9.651418] RTW: hal_com_config_channel_plan chplan:0x20
+[    9.656942] RTW: Hal_EfuseParsePowerSavingMode_8188F...bHWPwrPindetect(0)-bHWPowerdown(0) ,bSupportRemoteWakeup(1)
+[    9.667662] RTW: ### PS params=>  power_mgnt(2),usbss_enable(0) ###
+[    9.675352] RTW: kfree Pwr Trim flag:1
+[    9.679232] RTW: bb_gain:0
+[    9.684288] RTW: rtl8188f_FirmwareDownload fw: FW_NIC, size: 20288
+[    9.690724] RTW: rtl8188f_FirmwareDownload: fw_ver=d fw_subver=0000 sig=0x88f1, Month=02, Date=06, Hour=16, Minute=59
+[    9.701712] RTW: rtl8188f_FirmwareDownload(): Shift for fw header!
+[    9.708117] RTW: rtl8188f_FirmwareDownload by IO write!
+[    9.733607] RTW: polling_fwdl_chksum: Checksum report OK! (1, 0ms), REG_MCUFWDL:0x00040105
+[    9.743011] RTW: _8051Reset8188: Finish
+[    9.756483] RTW: _FWFreeToGo: Polling FW ready OK! (139, 20ms), REG_MCUFWDL:0x000401c6
+[    9.764704] RTW: rtl8188f_FirmwareDownload: DLFW OK !
+[    9.769927] RTW: rtl8188f_FirmwareDownload success. write_fw:1, 60ms
+[    9.776582] RTW:  <=== rtl8188f_FirmwareDownload()
+[    9.782495] RTW: CardDisableRTL8188FU
+[    9.788469] RTW: hal_read_mac_hidden_rpt OK! (1, 10ms), fwdl:1, id:0x19
+[    9.795354] RTW: InitAdapterVariablesByPROM_8188FU(): REPLACEMENT = 0
+[    9.802013] RTW: rtw_hal_read_chip_info in 480 ms
+[    9.806953] RTW: init_channel_set((null)) ChannelPlan ID:0x20, ch num:13
+[    9.815296] RTW: NR_RECVBUFF: 8
+[    9.818556] RTW: MAX_RECVBUF_SZ: 32768
+[    9.822438] RTW: NR_PREALLOC_RECV_SKB: 8
+[    9.827132] RTW: rtw_alloc_macid((null)) if1, mac_addr:ff:ff:ff:ff:ff:ff macid:1
+[    9.835038] RTW: IQK FW offload:disable
+[    9.839018] RTW: Init_ODM_ComInfo_8188f(): fab_ver=0 cut_ver=12
+[    9.845204] RTW: rtw_regsty_chk_target_tx_power_valid return _FALSE for band:0, path:0, rs:0, t:-1
+[    9.854671] RTW: phy_ConfigBBWithPgParaFile(): No File PHY_REG_PG.txt, Load from HWImg Array!
+[    9.863506] RTW: default power by rate loaded
+[    9.868236] RTW: rtw_macaddr_cfg mac addr:68:b9:d3:23:e5:67
+[    9.874001] RTW: bDriverStopped:True, bSurpriseRemoved:False, bup:0, hw_init_completed:0
+[    9.883858] RTW: NR_RECVBUFF: 8
+[    9.887269] RTW: MAX_RECVBUF_SZ: 32768
+[    9.891182] RTW: NR_PREALLOC_RECV_SKB: 8
+[    9.895798] RTW: rtw_alloc_macid((null)) if2, mac_addr:ff:ff:ff:ff:ff:ff macid:1
+[    9.903484] RTW: rtw_drv_add_vir_if if2 mac_addr : 6a:b9:d3:23:e5:67
+[    9.910210] RTW: rtw_wiphy_alloc(phy0)
+[    9.914092] RTW: rtw_wdev_alloc(padapter=c06b8000)
+[    9.919134] RTW: rtw_wiphy_alloc(phy1)
+[    9.923014] RTW: rtw_wdev_alloc(padapter=c072a000)
+[    9.928007] RTW: rtw_wiphy_register(phy0)
+[    9.932754] RTW: rtw_ndev_init(ra0) if1 mac_addr=68:b9:d3:23:e5:67
+[    9.942887] RTW: rtw_ndev_notifier_call(ra0) state:16
+[    9.963013] RTW: rtw_ndev_notifier_call(ra0) state:5
+[    9.971434] RTW: rtw_wiphy_register(phy1)
+[    9.976382] RTW: rtw_ndev_init(ra1) if2 mac_addr=6a:b9:d3:23:e5:67
+[    9.983311] RTW: rtw_ndev_notifier_call(ra1) state:16
+[   10.006697] RTW: rtw_ndev_notifier_call(ra1) state:5
+[   10.015698] usbcore: registered new interface driver rtl8188fu
+[   10.021737] RTW: module init ret=0
+ip: SIOCSIFNAME: No such device
+[   10.067517] 
+[   10.067517]  20170721 15:58 GM8135S/GM8136S Init Reset Key Driver Success
+[   10.124250] 
+[   10.124250]  NetLED for rts390xN dev  success
+insmod: can't read '/mnt/mtd/module/eeprom_drv.ko': No such file or directory
+Successfully initialized wpa_supplicant
+rfkill: Cannot open RFKILL control device[   10.708775] RTW: rtw_ndev_notifier_call(ra0) state:13
+
+[   10.717393] RTW: _netdev_open(ra0) , bup=0
+[   10.723781] RTW:  power-on :REG_SYS_CLKR 0x09=0xfc. REG_CR 0x100=0x3f.
+[   10.730605] RTW:  MAC has already power on.
+[   10.735610] RTW: rtl8188f_FirmwareDownload fw: FW_NIC, size: 20288
+[   10.742011] RTW: rtl8188f_FirmwareDownload: fw_ver=d fw_subver=0000 sig=0x88f1, Month=02, Date=06, Hour=16, Minute=59
+[   10.753053] RTW: rtl8188f_FirmwareDownload(): Shift for fw header!
+[   10.759493] RTW: rtl8188f_FirmwareDownload by IO write!
+[   10.785188] RTW: polling_fwdl_chksum: Checksum report OK! (1, 0ms), REG_MCUFWDL:0x00040105
+[   10.794447] RTW: _8051Reset8188: Finish
+[   10.807973] RTW: _FWFreeToGo: Polling FW ready OK! (143, 20ms), REG_MCUFWDL:0x000401c6
+[   10.816195] RTW: rtl8188f_FirmwareDownload: DLFW OK !
+[   10.821417] RTW: rtl8188f_FirmwareDownload success. write_fw:1, 60ms
+[   10.828075] RTW:  <=== rtl8188f_FirmwareDownload()
+[   10.833029] RTW: fw download ok!
+[   10.844138] RTW: PHY_MACConfig8188F OK!
+[   10.866297] RTW: PHY_BBConfig8188F OK!
+[   11.114913] RTW: PHY_RFConfig8188F OK!
+[   11.122830] RTW: usb_AggSettingRxUpdate: RX Aggregation USB mode, size=20KB, timeout=1024us
+[   11.394393] RTW: rtl8188fu_hal_init in 670ms
+[   11.398861] RTW: rtw_hal_set_macaddr_port ra0- hw port(0) mac_addr =68:b9:d3:23:e5:67
+[   11.407402] RTW: rtw_hal_set_macaddr_port ra1- hw port(1) mac_addr =6a:b9:d3:23:e5:67
+[   11.416325] RTW: rtw_hal_get_macaddr_port ra0- hw port(0) mac_addr =68:b9:d3:23:e5:67
+[   11.424430] RTW: ra0- hw port(0) mac_addr =68:b9:d3:23:e5:67
+[   11.430718] RTW: rtw_hal_get_macaddr_port ra1- hw port(1) mac_addr =6a:b9:d3:23:e5:67
+[   11.438854] RTW: ra1- hw port(1) mac_addr =6a:b9:d3:23:e5:67
+[   11.444942] RTW: [HW_VAR_ENABLE_RX_BAR] 0x6A2=0x500
+[   11.455005] RTW: rtw_rf_get_kfree_tx_gain_offset path:0, ch:6, bb_gain_sel:0, kfree_offset:0
+[   11.464311] RTW: kfree gain_offset 0x55:0x82060 RTW:  after :0x2060
+[   11.472003] RTW: MAC Address = 68:b9:d3:23:e5:67
+[   11.476811] RTW: rtw_start_drv_threads(ra0) start RTW_CMD_THREAD
+[   11.483384] RTW: rtw_cfg80211_init_wiphy:rf_type=0
+[   11.488427] RTW: [HT] HAL Support STBC = 0x01
+[   11.492948] RTW: _netdev_vir_if_open(ra1) , bup=0
+[   11.497844] RTW: rtw_cfg80211_init_wiphy:rf_type=0
+[   11.502797] RTW: [HT] HAL Support STBC = 0x01
+[   11.507325] RTW: _netdev_vir_if_open(ra1) (bup=1) exit
+[   11.512635] RTW: -871x_drv - drv_open, bup=1
+[   11.517149] RTW: cfg80211_rtw_set_power_mgmt(ra0) enabled:1, timeout:-1
+[   11.524008] RTW: rtw_ndev_notifier_call(ra0) state:1
+nl80211: Could not re-add multicast membership for vendor events: -2 (No such file or directory)
+[   11.579183] RTW: cfg80211_rtw_flush_pmksa(ra0)
+[   11.593066] Bus Mode Reg after reset: 0x00020101, cnt=0
+insmod: can't insert '/lib/modules/mmc_core.ko': File exists
+insmod: can't insert '/lib/modules/jzmmc_v12.ko': File exists
+mount: mounting /dev/mmcblk0p1 on /mnt/mmc failed: No such file or directory
+[   11.684757] RTW: cfg80211_rtw_scan(ra0)
+[   11.689260] RTW: [HW_VAR_CHECK_TXBUF] no packet in tx packet buffer (0)
+[   11.699088] RTW: ra0 sleep m0=0x00000002, ori reg_0x4d4=0x00000000
+[3.0|hySyscfg.c|hySysCfgInit,3210] ***********core sdk version [V3.0.0.2-20200301]************
+Get Ajy Url = https://sdc-inl.ajcloud.net:8443/api/v1/cmd/register 
+[3.0|hySyscfg.c|IniGetPtz485BaudRate,3065]  BaudRate /var/syscfg/485baudrate.ini not exist, set default(9600)
+[3.0|hySyscfg.c|IniGetPtz485BaudRate,3067]  [9600] 
+open eeprom error!
+open eeprom error!
+Not Insert Sd Card 
+00:00:12 [tuyaApp.c tuyaAppStart:1077] E> -------------------------------------
+00:00:12 [tuyaApp.c tuyaAppStart:1086] E> ----Initialization---- 0:PTZ
+00:00:12 [tuyaApp.c tuyaAppStart:1089] E> Ptz not support
+00:00:12 [tuyaApp.c tuyaAppStart:1103] E> ----Initialization---- 1:hardware
+[3.0|coreHardware.c|coreHwInit,855] 
+snLedOppositeState = 0 
+[3.0|coreHardware.c|coreHwInit,873] night vision type:1(01000110100/1)
+[3.0|coreHardware.c|coreHwNightVisionCtrlSet,940] ======================================
+[3.0|coreHardware.c|StartHWControlThread,439] 
+[3.0|coreHardware.c|StartHWControlThread,443] 
+[3.0|gpioAdc_GM.c|getAdcValue_JZ,35] jzAdcInitFlg=0 
+[3.0|gpioAdc_GM.c|getAdcValue_JZ,38] jzAdcInitFlg=0 
+[   13.305011] RTW: ra0 wakeup m0=0x00000002, ori reg_0x4d4=0x00000002
+[   13.311652] RTW: survey done event(2e) band:0 for ra0
+[   13.317100] RTW: rtw_indicate_scan_done(ra0)
+00:00:13 [tuyaApp.c tuyaAppStart:1108] E> ----Initialization---- 2:network
+[3.0|coreNet.c|coreNetInit,1580] 
+[3.0|coreNet.c|NetCallSystem,86] 000 NetCallSystem ifconfig eth0 down;sleep 1;ifconfig eth0 hw ether 78:A5:DD:40:83:77;ifconfig eth0 up;echo 78:A5:DD:40:83:77 > /var/ethmacaddress;ifconfig eth0 0.0.0.0 errno = 2,nLoop = 0 
+[   14.923842] Bus Mode Reg after reset: 0x00020101, cnt=0
+[3.0|coreNet.c|NetCallSystem,116] 001 NetCallSystem ifconfig eth0 down;sleep 1;ifconfig eth0 hw ether 78:A5:DD:40:83:77;ifconfig eth0 up;echo 78:A5:DD:40:83:77 > /var/ethmacaddress;ifconfig eth0 0.0.0.0 errno = 2,nLoop = 2 
+[3.0|halWifiHandle.c|hWIFI_GetWpaSupplicantConf,409] ssid= pwd= security=0
+Not Found SD card WiFi Conf File
+[3.0|halWifiHandle.c|hWIFI_CheckWifiStatus,664] nWifiStatusFlag:[1]
+OK
+[   16.155221] RTW: cfg80211_rtw_scan(ra0)
+[   16.159675] RTW: [HW_VAR_CHECK_TXBUF] no packet in tx packet buffer (0)
+[   16.174327] RTW: ra0 sleep m0=0x00000002, ori reg_0x4d4=0x00000000
+OK
+[3.0|coreNet.c|checkPhy_ap0,289] checkPhy_ap0 =0
+[3.0|coreNet.c|coreNetInit,1592] checkPhy_ap0(.), g_bHasAp0=0
+[3.0|coreNet.c|startNetManagerThread,1486] Start Net manager :0 
+00:00:16 [tuyaApp.c tuyaAppStart:1112] E> ----Initialization---- 3:audio and video
+[3.0|coreAvStream.c|coreAvInit,61] 
+[3.0|video.c|videoParamSet,53] eVideoIndex: 0
+[3.0|video.c|videoParamSet,54] eEncType: 3
+[3.0|video.c|videoParamSet,55] eBrMode: 4
+[3.0|video.c|videoParamSet,56] nWidth: 1920
+[3.0|video.c|videoParamSet,57] nHeight: 1080
+[3.0|video.c|videoParamSet,58] nFps: 15
+[3.0|video.c|videoParamSet,59] nGop: 30
+[3.0|video.c|videoParamSet,60] nKBps: 1024
+[3.0|video.c|videoParamSet,61] bWithAudio: 1
+[3.0|video.c|videoParamSet,62] bAutoChangeVideoParamByP2p: 0
+[3.0|video.c|videoParamSet,53] eVideoIndex: 1
+[3.0|video.c|videoParamSet,54] eEncType: 3
+[3.0|video.c|videoParamSet,55] eBrMode: 4
+[3.0|video.c|videoParamSet,56] nWidth: 768
+[3.0|video.c|videoParamSet,57] nHeight: 432
+[3.0|video.c|videoParamSet,58] nFps: 15
+[3.0|video.c|videoParamSet,59] nGop: 30
+[3.0|video.c|videoParamSet,60] nKBps: 425
+[3.0|video.c|videoParamSet,61] bWithAudio: 1
+[3.0|video.c|videoParamSet,62] bAutoChangeVideoParamByP2p: 0
+[3.0|video.c|sample_sensor_init,1534] 
+[3.0|coreNet.c|netManagerThread,1287] Create NetManager Thread :1971877104 
+00:00:16 [tuyaApp.c netCallBack:429] E> eFunNetLinkageType=6
+call sample_system_init 
+read sensortype 
+chTypeString type = sensor:os02b10
+ 
+sensor type = ***os02b10
+*** 
+Sensor Name = ***os02b10*** 
+Get Sensor Ty[   16.313232] set sensor gpio as PA-low-10bit
+pe = 0 
+002 sample_system_init 
+003 sample_system_init 
+004 sample_system_init 
+005 sample_system_init 
+006 sample_system_init :Index:0,Widht,Heighit(1920x1080)
+007 sample_system_init 
+[3.0|sample-common.c|sample_system_init,375] ret = 0
+[   16.385362] ov2735 chip found @ 0x3c (i2c0)
+[3.0|sample-common.c|sample_system_init,382] ret = 0
+[3.0|sample-common.c|sample_system_init,389] ret = 0
+[3.0|sample-common.c|sample_system_init,396] ret = 0
+[3.0|sample-common.c|sample_system_init,404] ret = 0
+[3.0|sample-common.c|sample_system_init,410] ret = 0
+[3.0|sample-common.c|sample_system_init,412] ret = 0
+[3.0|sample-common.c|sample_system_init,414] ret = 0
+[3.0|sample-common.c|sample_system_init,416] ret = 0
+[3.0|sample-common.c|sample_system_init,419] ret = 0
+[3.0|sample-common.c|sample_system_init,425] ret = 0
+[3.0|sample-common.c|sample_system_init,429] ret = 0
+[3.0|coreAvStream.c|coreAvInit,78] gs_bSensorInited=1
+[3.0|hySyscfg.c|hySysCfgSaveFile,3137] hySysCfgSaveFile, added mutex by juju 
+00:00:16 [tuyaApp.c tuyaAppStart:1122] E> ----Initialization---- 4:audio stream
+001 audio_aec_start_Thread printf aigain value = 12 
+002 audio_aec_start_Thread printf g_AiDevID = 1 
+[3.0|coreHardware.c|ircutPolling,303] eRetDayNight = 0
+	
+[3.0|halGpioHandle.c|hGPIO_ControlIrcut,251] Call IRCut Close 
+[   17.044565] codec_set_device: set device: MIC...
+Input nMode =0 [0:Close 2:Auto Other:Error]
+00:00:17 [tuyaApp.c hwLinkageCallBack:273] E> eFunHwLinkageType=4
+HW_SET_IMAGE_DAY
+AJY_IPC, audio_aec_init] chnVol=60 aigain=12
+IMP_AI_EnableHpf  
+Enable NS 
+[3.0|coreAvStream.c|coreAudioStreamStart,378] g_hAEncodeThread : 1915585776
+00:00:17 [tuyaApp.c tuyaAppStart:1125] E> ----Initialization---- 5:audio play
+[3.0|coreAvStream.c|coreAudioPlayInit,480] 
+[3.0|audio.c|audio_play_init,784] 
+[3.0|libcfAvshm.cpp|WriteAVFrame,272] WriteAVFrame Not Init 
+00:00:17 [tuyaApp.c AudioStreamCallbackFun:634] E> Write Audio Frame Failed:-22 
+Call Sem Set 
+[3.0|SemOper.cpp|SemInit,88] SemInit :0,100 
+[3.0|libcfAvshm.cpp|InitAvShm,160] 001 Shm Info:102400,1,0 
+[3.0|libcfAvshm.cpp|InitAvShm,238] 001.1 Shm Info:0,0,0,102400 
+[3.0|libcfAvshm.cpp|InitAvShm,246] 002 Shm Info:102400,102368,0,102400,0,0,0,0 
+[   17.554523] codec_set_device: set device: speaker...
+[3.0|audio.c|StartBeepThread,1256] 
+00:00:17 [tuyaApp.c _getWifiIsConfiged:234] E> wifi config flag is not exist
+[3.0|audio.c|AudioBeepThread,1196] 
+[   17.754000] RTW: ra0 wakeup m0=0x00000002, ori reg_0x4d4=0x00000002
+[   17.774722] RTW: survey done event(33) band:0 for ra0
+[   17.780140] RTW: rtw_indicate_scan_done(ra0)
+Dbg:SDK Version:<TUYA IPC SDK V:4.8.4 >
+< TUYA IOT SDK V:4.1.1 BS:30.01_PT:2.2_LAN:3.3_CAD:1.0.1_CD:1.0.0 >
+IPC DEFS < ENABLE_ECHO_SHOW:0 ENABLE_CHROMECAST:0 ENABLE_CLOUD_STORAGE:1 >'
+< BUILD AT:2020_07_22_12_19_04 BY chenjing FOR linux_wifi_wired AT mips-linux-uclibc-4.7.2_64Bit >
+
+
+Dbg:init_mode:1
+
+TUYAUID{pftcuvcum7mqidfi}
+{tuyaed71c579eb242fe2}
+{TMREh3EzAcLgsdISziQIEfzVdEl36awQ}
+Dbg:Init Value.storage_path /var/syscfg/
+Dbg:Init Value.upgrade_file_path /var/tuyaUpgrade.pkg
+Dbg:Init Value.sd_base_path /mnt/mmc/
+Dbg:Init Value.product_key pftcuvcum7mqidfi
+Dbg:Init Value.uuid tuyaed71c579eb242fe2
+Dbg:Init Value.auth_key TMREh3EzAcLgsdISziQIEfzVdEl36awQ
+Dbg:Init Value.p2p_id 
+Dbg:Init Value.dev_sw_version 20.01.22
+Dbg:Init Value.max_p2p_user 5
+Dbg:Init Value.init_mode 1
+Dbg:channel_enable:1 1 0
+Dbg:fps:15
+Dbg:gop:30
+Dbg:bitrate:1024 kbps
+Dbg:video_main_width:1920
+Dbg:video_main_height:1080
+Dbg:video_freq:90000
+Dbg:video_codec:2
+Dbg:audio_codec:101
+Dbg:audio_sample:8000
+Dbg:audio_databits:16
+Dbg:audio_channel:0
+Dbg:init ring buffer Channel:0 Enable:1
+Dbg:video_bitrate 1024, video_fps 15
+Dbg:init ring buffer success. channel:0
+Dbg:init ring buffer Channel:1 Enable:1
+Dbg:video_bitrate 425, video_fps 15
+Dbg:init ring buffer success. channel:1
+Dbg:init ring buffer Channel:2 Enable:0
+Dbg:init ring buffer Channel:3 Enable:0
+Dbg:init ring buffer Channel:4 Enable:0
+Dbg:init ring buffer Channel:5 Enable:0
+Dbg:init ring buffer Channel:6 Enable:0
+Dbg:init ring buffer Channel:7 Enable:0
+Dbg:init ring buffer Channel:8 Enable:0
+Dbg:init ring buffer Channel:9 Enable:1
+Dbg:audio_sample 8000, audio_databits 16, audio_fps 20
+Dbg:init ring buffer success. channel:9
+Dbg:init ring buffer Channel:10 Enable:0
+Dbg:init ring buffer Channel:11 Enable:0
+Dbg:init ring buffer Channel:12 Enable:0
+Dbg:init ring buffer Channel:13 Enable:0
+Dbg:init ring buffer Channel:14 Enable:0
+Dbg:init ring buffer Channel:15 Enable:0
+curr event:0 
+[01-01 18:12:15-- TUYA Debug][tuya_iot_com_api.c:94] init fs. Path: /var/syscfg/ 
+[01-01 18:12:15-- TUYA Info][kv_storge.c:43] Init Kvs With File:/var/syscfg/
+[01-01 18:12:15-- TUYA Debug][simplekv.c:916] path:/var/syscfg/
+[01-01 18:12:15-- TUYA Debug][simplekv.c:952] get encrypt_key[£—¢US¾ñüùykRéâ]
+[01-01 18:12:15-- TUYA Debug][simplekv.c:983] both file exist
+[01-01 18:12:15-- TUYA Debug][simplekv.c:280] size in: 0 and final: 28700 And mag_rec_max: 512
+[01-01 18:12:15-- TUYA Debug][simplekv.c:295] create data hd success
+[01-01 18:12:15-- TUYA Debug][simplekv.c:1026] read from normal file
+[01-01 18:12:15-- TUYA Debug][simplekv.c:736] curr db is V2. No need to upgrade
+[01-01 18:12:15-- TUYA Debug][simplekv.c:526] head check success
+[01-01 18:12:15-- TUYA Debug][simplekv.c:629] read and check head success
+[01-01 18:12:15-- TUYA Debug][simplekv.c:1041] read from normal file success
+[01-01 18:12:15-- TUYA Debug][uni_thread.c:161] Init Thread Del Mgr
+[01-01 18:12:15-- TUYA Debug][simplekv.c:1079] init from normal file success.
+[01-01 18:12:15-- TUYA Debug][sys_timer.c:63] system timer has been inited
+[01-01 18:12:15-- TUYA Debug][sys_timer.c:63] system timer has been inited
+[01-01 18:12:15-- TUYA Debug][sys_timer.c:63] system timer has been inited
+[01-01 18:12:15-- TUYA Debug][online_log_serv.c:340] read from uf. max:0 first:0 last:0
+[01-01 18:12:15-- TUYA Debug][online_log_serv.c:581] log serv init success
+[01-01 18:12:15-- TUYA Debug][ty_work_queue.c:22] init work queue. stack size:2560 pro:3 num:2
+[01-01 18:12:15-- TUYA Debug][ty_work_queue.c:27] ty work queue create success
+[01-01 18:12:15-- TUYA Debug][uni_thread.c:220] Thread:cmmod Exec Start. Set to Running Status
+[01-01 18:12:15-- TUYA Debug][uni_thread.c:220] Thread:sys_timer Exec Start. Set to Running Status
+[01-01 18:12:15-- TUYA Debug][sys_timer.c:34] system timer process run.
+
+[01-01 18:12:15-- TUYA Debug][uni_thread.c:220] Thread:wk_th-1 Exec Start. Set to Running Status
+[01-01 18:12:15-- TUYA Debug][uni_thread.c:220] Thread:wk_th-0 Exec Start. Set to Running Status
+[01-01 18:12:15-- TUYA Debug][simplekv.c:1177] read key:gw_bi isFuzzy:0 skipCnt:0
+[01-01 18:12:15-- TUYA Debug][simplekv.c:1217] find key:0 gw_bi
+[01-01 18:12:15-- TUYA Debug][simplekv.c:1246] key:gw_bi find value.Len:160
+[01-01 18:12:15-- TUYA Debug][tuya_ws_db.c:490] gw base read success
+[01-01 18:12:15-- TUYA Debug][simplekv.c:1177] read key:gw_bi isFuzzy:0 skipCnt:0
+[01-01 18:12:15-- TUYA Debug][simplekv.c:1217] find key:0 gw_bi
+[01-01 18:12:15-- TUYA Debug][simplekv.c:1246] key:gw_bi find value.Len:160
+[01-01 18:12:15-- TUYA Debug][tuya_ws_db.c:490] gw base read success
+[01-01 18:12:15-- TUYA Notice][gw_intf.c:2226] serial_no:(null)
+Set Country Code:CN 
+[01-01 18:12:15-- TUYA Debug][simplekv.c:1177] read key:gw_wsm isFuzzy:0 skipCnt:0
+[01-01 18:12:15-- TUYA Debug][simplekv.c:1217] find key:1 gw_wsm
+[01-01 18:12:15-- TUYA Debug][simplekv.c:1246] key:gw_wsm find value.Len:128
+[01-01 18:12:15-- TUYA Debug][tuya_ws_db.c:610] gw_wsm read success
+[01-01 18:12:15-- TUYA Notice][gw_intf.c:2255] gw_cntl.gw_wsm.stat:0
+[01-01 18:12:15-- TUYA Notice][gw_intf.c:2258] gw_cntl.gw_wsm.nc_tp:2
+[01-01 18:12:15-- TUYA Notice][gw_intf.c:2259] gw_cntl.gw_wsm.md:0
+[01-01 18:12:15-- TUYA Debug][simplekv.c:1177] read key:gw_di isFuzzy:0 skipCnt:0
+[01-01 18:12:15-- TUYA Debug][simplekv.c:1217] find key:2 gw_di
+[01-01 18:12:15-- TUYA Debug][simplekv.c:1246] key:gw_di find value.Len:320
+[01-01 18:12:15-- TUYA Debug][tuya_ws_db.c:756] gw_di read success
+[01-01 18:12:15-- TUYA Notice][gw_intf.c:2292] gw_cntl.gw_if.abi:0 input:0
+[01-01 18:12:15-- TUYA Notice][gw_intf.c:2293] gw_cntl.gw_if.product_key:pftcuvcum7mqidfi, input:pftcuvcum7mqidfi
+[01-01 18:12:15-- TUYA Notice][gw_intf.c:2294] gw_cntl.gw_if.tp:0, input:0
+[01-01 18:12:15-- TUYA Debug][simplekv.c:1177] read key:gw_ai isFuzzy:0 skipCnt:0
+[01-01 18:12:15-- TUYA Debug][simplekv.c:1217] find key:3 gw_ai
+[01-01 18:12:15-- TUYA Debug][simplekv.c:1246] key:gw_ai find value.Len:176
+[01-01 18:12:15-- TUYA Debug][tuya_ws_db.c:851] gw_ai read success
+[01-01 18:12:15-- TUYA Debug][gw_intf.c:2452] enter success_proc
+[hwl_wf_wk_mode_set]wf_wk_mode = 3
+WIFI Get MAC 68-B9-D3-23-E5-67
+Start AP SSID:SmartLife-E567 
+coreNetSoftApStart 
+[3.0|coreNet.c|NetCallSystem,86] 000 NetCallSystem wpa_cli -ira0 disconnect;/etc/net_sh/softap_stop.sh;/etc/net_sh/net_exit.sh;/etc/net_sh/softap_start.sh "SmartLife-E567" errno = 0,nLoop = 0 
+[01-01 18:12:15-- TUYA Debug][tuya_iot_wifi_api.c:365] register wifi network monitor. interval:5
+[01-01 18:12:15-- TUYA Debug][app_agent.c:333] TUYA Mode, start TUYA thread to listen Lan
+[01-01 18:12:15-- TUYA Debug][app_agent.c:363] cmmod register finish 1
+[3.0|coreAvStream.c|coreYuvDataStart,294]  
+00:00:18 [fuZbar.cpp fQr_StartQrRecog:319] E> #####################StartQrRecog##############################
+00:00:18 [fuZbar.cpp do_qr_thread:252] E> start qr thread g_bQrThreadExitFlag:0
+[01-01 18:12:15-- TUYA Debug][uni_thread.c:220] Thread:lpc_task Exec Start. Set to Running Status
+[01-01 18:12:15-- TUYA Debug][app_agent.c:860] begint to execute __lpc_task
+[01-01 18:12:15-- TUYA Debug][app_agent.c:887] Setup TCP Server On Port:6668
+OK
+[softap_stop.sh]----------------
+ash: you need to specify whom to kill
+ash: you need to specify whom to kill
+ash: you need to specify whom to kill
+[   19.447324] RTW: rtw_ndev_notifier_call(ra0) state:9
+[   19.452486] RTW: netdev_close(ra0) , bup=1
+[   19.456870] RTW: (2)871x_drv - drv_close, bup=1, hw_init_completed=_TRUE
+[   19.465023] RTW: rtw_hal_set_bssid ra0- hw port -0 BSSID: 00:00:00:00:00:00
+[   19.472662] RTW: rtw_cfg80211_indicate_disconnect(ra0)
+[   19.478506] RTW: rtw_reset_securitypriv(ra0) - End to Disconnect
+[   19.484945] RTW: rtw_free_assoc_resources-ra0 tgt_network MacAddress=00:00:00:00:00:00 ssid=
+[   19.499210] RTW: free disconnecting network of scanned_queue failed due to pwlan== NULL
+[   19.499210] 
+[   19.509466] RTW: -871x_drv - drv_close, bup=1
+[   19.514479] RTW: rtw_ndev_notifier_call(ra0) state:2
+[   21.120301] RTW: rtw_ndev_notifier_call(ra0) state:13
+[   21.134571] RTW: _netdev_open(ra0) , bup=1
+[   21.144628] RTW: -871x_drv - drv_open, bup=1
+[   21.149118] RTW: cfg80211_rtw_set_power_mgmt(ra0) enabled:1, timeout:-1
+[   21.174217] RTW: rtw_ndev_notifier_call(ra0) state:1
+ash: you need to specify whom to kill
+ash: you need to specify whom to kill
+ash: you need to specify whom to kill
+[   21.384609] RTW: rtw_ndev_notifier_call(ra0) state:9
+[   21.389769] RTW: netdev_close(ra0) , bup=1
+[   21.394077] RTW: (2)871x_drv - drv_close, bup=1, hw_init_completed=_TRUE
+[   21.415457] RTW: rtw_hal_set_bssid ra0- hw port -0 BSSID: 00:00:00:00:00:00
+[   21.434855] RTW: rtw_cfg80211_indicate_disconnect(ra0)
+[   21.440205] RTW: rtw_reset_securitypriv(ra0) - End to Disconnect
+[   21.454618] RTW: rtw_free_assoc_resources-ra0 tgt_network MacAddress=00:00:00:00:00:00 ssid=
+[   21.473577] RTW: free disconnecting network of scanned_queue failed due to pwlan== NULL
+[   21.473577] 
+[   21.493835] RTW: -871x_drv - drv_close, bup=1
+[   21.504078] RTW: rtw_ndev_notifier_call(ra0) state:2
+[softap_start.sh]----------------
+ash: you need to specify whom to kill
+ash: you need to specify whom to kill
+ash: you need to specify whom to kill
+ash: you need to specify whom to kill
+ash: you need to specify whom to kill
+[01-01 18:12:20-- TUYA Debug][tuya_iot_wifi_api.c:347] wifi netstat changed to:5  -->>
+Dbg:Net status change to:5
+[01-01 18:12:20-- TUYA Debug][tuya_iot_wifi_api.c:350] wifi netstat changed to:5  <<--
+[3.0|coreNet.c|RefreshNetInfo,657] RefreshNetInfo :IP:,MASK:,GateWay: 
+[01-01 18:12:20-- TUYA Debug][app_agent.c:702] Create UDP Socket To Broadcast
+[01-01 18:12:20-- TUYA Err][app_agent.c:803] sendto Failed,len:172 ret:-1,errno:-18 port:6667
+[   24.245385] RTW: rtw_ndev_notifier_call(ra0) state:13
+[   24.250619] RTW: _netdev_open(ra0) , bup=1
+[   24.264647] RTW: -871x_drv - drv_open, bup=1
+[   24.269212] RTW: cfg80211_rtw_set_power_mgmt(ra0) enabled:1, timeout:-1
+[   24.284772] RTW: rtw_ndev_notifier_call(ra0) state:1
+Configuration file: /var/hostapd.conf
+[   24.918521] RTW: cfg80211_rtw_change_iface(ra0) type=3, hw_port:0
+[   24.925059] RTW: cfg80211_rtw_change_iface(ra0) call netdev_open
+[   24.931356] RTW: _netdev_open(ra0) , bup=1
+[   24.935734] RTW: -871x_drv - drv_open, bup=1
+[   24.941422] RTW: cfg80211_rtw_change_iface(ra0) old_iftype=2, new_iftype=3
+[   24.948779] RTW: rtw_release_macid(ra0) if1, mac_addr:ff:ff:ff:ff:ff:ff macid:1
+[   24.956439] RTW: rtw_alloc_macid(ra0) if1, mac_addr:ff:ff:ff:ff:ff:ff macid:0
+[   24.967484] RTW: rtw_hal_set_macaddr_port ra0- hw port(0) mac_addr =68:b9:d3:23:e5:67
+[   24.976800] RTW: #### hw_var_set_opmode() -4639 hw_port(0) mode = 3 ####
+[   24.987904] RTW: cfg80211_rtw_change_iface(ra0) ret:0
+rfkill: Cannot open RFKILL control device
+nl80211: Could not re-add multicast membership for vendor events[   25.000849] RTW: +cfg80211_rtw_del_station(ra0) mac=  (null)
+: -2 (No such file or directory)
+[   25.015791] RTW: flush all sta, and cam_entry
+[   25.020314] RTW: rtw_sta_flush(ra0)
+[   25.023924] RTW: issue_deauth to ff:ff:ff:ff:ff:ff
+[   25.049857] RTW: +cfg80211_rtw_del_station(ra0) mac=ff:ff:ff:ff:ff:ff
+[   25.064564] RTW: free sta macaddr =ff:ff:ff:ff:ff:ff
+[   25.080320] RTW: cfg80211_rtw_del_key(ra0) key_index=0, addr=  (null)
+[   25.103782] RTW: cfg80211_rtw_del_key(ra0) key_index=1, addr=  (null)
+[   25.124194] RTW: cfg80211_rtw_del_key(ra0) key_index=2, addr=  (null)
+[   25.151808] RTW: cfg80211_rtw_del_key(ra0) key_index=3, addr=  (null)
+Using interface ra0 with hwaddr 68:b9:d3[   25.159368] RTW: cfg80211_rtw_start_ap(ra0) hidden_ssid:0, auth_type:5
+:23:e5:67 and ssid "SmartLife-E567"
+[   25.184580] RTW: rtw_add_beacon beacon_head_len=65, beacon_tail_len=9
+[   25.198429] RTW: rtw_check_beacon_data, len=50
+[   25.208184] RTW: rtw_hal_set_bssid ra0- hw port -0 BSSID: 68:b9:d3:23:e5:67
+[   25.216412] RTW: rtw_ap_chbw_decision(ra0) ld_sta_num:0, lg_sta_num0, ap_num:0, mesh_num:0
+[   25.226390] RTW: rtw_ap_chbw_decision(ra0) req: 0,-1,-1
+[   25.236068] RTW: rtw_ap_chbw_decision(ra0) dec: 1,0,0
+[   25.241844] RTW: HW_VAR_BASIC_RATE: 0x15f->0x15f->0x15f
+[   25.249180] RTW: rtw_get_sta_tx_nss: 1 SS
+[   25.253432] RTW: rtw_get_sta_rx_nss: 1 SS
+[   25.257662] RTW: STA - MAC_ID:0, Tx - 1 SS, Rx - 1 SS
+[   25.262887] RTW: STA - MAC_ID:0, SM_PS 3
+[   25.267579] RTW: ra0 BMC Init Tx rate - CCK_11M
+[   25.282911] RTW: rtw_cfg80211_indicate_connect(ra0)
+[   25.289367] RTW: assoc success
+[   25.292612] RTW: rtw_ndev_notifier_call(ra0) state:4
+[   25.301477] RTW: cfg80211_rtw_change_bss(ra0)
+[   25.306268] RTW: rtw_ndev_notifier_call(ra0) state:4
+[   25.312211] RTW: cfg80211_rtw_set_mac_acl(ra0) acl_policy:0, entry_num:0
+[   25.319287] RTW: rtw_set_macaddr_acl(ra0) p=1, mode=1
+ra0: interface state UNINITIALIZED->ENABLED
+ra0: AP-ENABLED 
+udhcpd (v1.22.1) started
+[3.0|coreNet.c|NetCallSystem,116] 001 NetCallSystem wpa_cli -ira0 disconnect;/etc/net_sh/softap_stop.sh;/etc/net_sh/net_exit.sh;/etc/net_sh/softap_start.sh "SmartLife-E567" errno = 2,nLoop = 7 
+[01-01 18:12:22-- TUYA Debug][app_agent.c:588] start thread to listen udp
+[01-01 18:12:22-- TUYA Debug][uni_thread.c:220] Thread:udp_ap_v3 Exec Start. Set to Running Status
+[01-01 18:12:22-- TUYA Debug][app_agent.c:418] start udp ap thread
+[01-01 18:12:25-- TUYA Debug][tuya_iot_wifi_api.c:347] wifi netstat changed to:2  -->>
+Dbg:Net status change to:2
+[01-01 18:12:25-- TUYA Debug][tuya_iot_wifi_api.c:350] wifi netstat changed to:2  <<--
+[3.0|coreNet.c|RefreshNetInfo,657] RefreshNetInfo :IP:192.168.0.1,MASK:255.255.255.0,GateWay: 
+[01-01 18:12:25-- TUYA Debug][app_agent.c:702] Create UDP Socket To Broadcast
+[3.0|coreNet.c|RefreshNetInfo,657] RefreshNetInfo :IP:192.168.0.1,MASK:255.255.255.0,GateWay: 
+[3.0|coreNet.c|RefreshNetInfo,657] RefreshNetInfo :IP:192.168.0.1,MASK:255.255.255.0,GateWay: 
+[3.0|coreNet.c|RefreshNetInfo,657] RefreshNetInfo :IP:192.168.0.1,MASK:255.255.255.0,GateWay: 
+[3.0|coreNet.c|netManagerThread,1386] checkRouteConnectivity: !E_FUN_ROUTER_OK offline eConnectivityStatus=2 g_eNetType=2 g_bSoftapRunFlg=1
+[3.0|coreNet.c|RefreshNetInfo,657] RefreshNetInfo :IP:192.168.0.1,MASK:255.255.255.0,GateWay: 
+
+Ingenic-uc1_1 login: 
+Ingenic-uc1_1 login: [3.0|coreNet.c|RefreshNetInfo,657] RefreshNetInfo :IP:192.168.0.1,MASK:255.255.255.0,GateWay: 
