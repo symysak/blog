@@ -27,5 +27,12 @@ export default defineConfig({
     socialLinks: [
       { icon: 'github', link: 'https://github.com/symysak/blog' }
     ]
-  }
+  },
+  head:[
+    ["script", {
+      "defer": "",
+      "src": "https://static.cloudflareinsights.com/beacon.min.js",
+      "data-cf-beacon": '{"token": "6a3873fb8b71458e999f85205dafd056"}'
+        }]
+  ]
 })
